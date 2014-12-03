@@ -2,7 +2,7 @@ set go=
 "设置配色，这里选择的是desert，也有其他方案，在vim中输入:color 在敲tab键可以查看 
 "设置背景色，每种配色有两种方案，一个light、一个dark 
 set background=light 
-"打开语法高亮 
+"打开语法高亮	
 syntax on 
 "显示行号 
 set number 
@@ -83,24 +83,6 @@ func SetTitle()
 endfunc
 
 
-nmap <silent> <F5> :!./a.out<cr> 
-nmap <silent> <F8> :WMToggle<cr> 
-nmap <silent> mm :WMToggle<cr> 
-"在进入vim时自动打开winmanager 
-let g:AutoOpenWinManager=1
-let g:winManagerWindowLayout='FileExplorer|TagList'
-nmap <silent>  mk :!make 
-nmap <silent>  mc :!make clean
-
-inoremap ( ()<Esc>i
-inoremap [ []<Esc>i
-inoremap { {<CR>}<Esc>O
-inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap } <c-r>=CloseBracket()<CR>
-inoremap " <c-r>=QuoteDelim('"')<CR>
-inoremap ' <c-r>=QuoteDelim("'")<CR>
 
 function ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -160,3 +142,38 @@ endf
 "
 " " 在行和段开始处使用制表符 
  set smarttab
+nmap <silent> <C-q> <esc>:wq<cr> 
+nmap <silent> <F5> :!./a.out<cr> 
+nmap <silent> mm <esc>:WMToggle<cr> 
+"在进入vim时自动打开winmanager 
+let g:AutoOpenWinManager=1
+let g:winManagerWindowLayout='FileExplorer|TagList'
+nmap <silent>  mk :make <cr>
+nmap <silent>  ms :w <cr>
+nmap <silent>  mc :make clean <cr>
+nmap <C-r> :!gcc % <cr>
+nmap me :cw <cr>
+nmap mq :wq <cr>
+
+map <F9> :w<Esc><CR>:!gcc % -o %:r <CR>
+map <F10> :!./%:r<CR>
+
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {<CR>}<Esc>O
+inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap } <c-r>=CloseBracket()<CR>
+inoremap " <c-r>=QuoteDelim('"')<CR>
+inoremap ' <c-r>=QuoteDelim("'")<CR>
+
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {<CR>}<Esc>O
+inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap } <c-r>=CloseBracket()<CR>
+inoremap " <c-r>=QuoteDelim('"')<CR>
+inoremap ' <c-r>=QuoteDelim("'")<CR>
