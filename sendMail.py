@@ -14,8 +14,8 @@ receiver = "f22jay@163.com"
 
 subject = 'mapper change'
 smtpserver = 'smtp.meituan.com'
-username='zhangfangjie'
-password='F22jay245819751'
+username='xxxx'
+password='xxxx'
 
 msg=MIMEText(mss,'text','utf-8')
 msg['Subject']=Header(subject,'utf-8')
