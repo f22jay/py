@@ -1,8 +1,13 @@
 #!/usr/bin/python
+#coding=utf-8
+
 import sys
 import urllib2
 import urllib
 import re
+
+'''  爬360 网页
+'''
 
 downed={}
 x=0
@@ -37,7 +42,7 @@ def downhtml(url,name):
         print e
 
 def geturl(html):
-    url_re = r'"(http\S*)"'
+    url_re = r'"(http\S*ml\S*)"'
     url_com = re.compile(url_re)
     match_rul = re.findall(url_com,html)
     return match_rul
@@ -51,23 +56,18 @@ def recurse_down(url):
     html=gethtml(url)
     urls =  geturl(html)
     for i in urls:
-        if i.__contains__("sina"):
-            if  i.endswith("/"):
+        if i.__contains__("360"):
+            if  i.__contains__(".html"):
                 print "recurse_down",i
                 recurse_down(i)
             else :
-                try:
-                    print "get" ,i
-                    name = i.split("/")
-                    urllib.urlretrieve(i,"sina/%s" %(name[-1]))
-                    downhtml(i,"sina/%s" %(name[-1]))
-                    x+=1
-                    print "got" ,i
-                except Exception,e:
-                    print e
+                print "get" ,i
+                name=i.split("/")
+                downhtml(i,"sina/%s" %(name[-1]))
+                x+=1
+                print "got" ,i
 
 
 
-#recurse_down("http://www.360doc.com/")
+recurse_down("http://www.360doc.com/")
 #downhtml("http://www.360doc.com/","360")
-recurse_down("http://www.sina.com.cn/")
