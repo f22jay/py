@@ -1,0 +1,12 @@
+
+15-05-06 00:00:00,005 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.service.impl.MtaOrderReadServiceImpl.getOrderByUser      cost:  1
+15-05-06 00:00:00,026 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.dao.impl.MtaOrderPayNotifyLogDAOImpl.listByParam         cost:  7
+15-05-06 00:00:00,027 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.service.impl.MtaOrderPayNotifyLogServiceImpl.listByParam         cost:  8
+15-05-06 00:00:00,027 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.service.impl.MtaOrderReadServiceImpl.getOrderByUser      cost:  0
+15-05-06 00:00:00,029 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.dao.impl.MtaOrderBaseDAOImpl.listByParam         cost:  10
+15-05-06 00:00:00,029 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.service.impl.MtaOrderBaseServiceImpl.listByParam         cost:  10
+15-05-06 00:00:00,038 INFO  stastic(StatisAspect.java:35) ## around     com.sun.proxy.$Proxy26.listOrderByMtUserIdOrOrderId      cost:  10
+15-05-06 00:00:00,038 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.thrift.service.impl.OrderServiceImpl.listByUser          cost:  11
+15-05-06 00:00:00,044 INFO  stastic(StatisAspect.java:35) ## around     com.sun.proxy.$Proxy26.listOrderByMtUserIdOrOrderId      cost:  35
+15-05-06 00:00:00,045 INFO  stastic(StatisAspect.java:35) ## around     com.meituan.hotel.order.thrift.service.impl.OrderServiceImpl.listByUser          cost:  41
+
