@@ -1,4 +1,5 @@
 #!/bin/bash
+###统计网卡速度
 
 bytes=$(ifconfig eth0 | grep RX | grep TX | sed 's/.*RX bytes:\([0-9]*\).*bytes:\([0-9]*\).*/\1:\2/g')
 last_in=$(echo $bytes | cut -d: -f 1)
