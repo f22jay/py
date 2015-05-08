@@ -7,7 +7,7 @@
 import sys
 import operator
 
-file=open("./tmp","rb")
+file=open("./stastic.log","rb")
 nums={}
 sums={}
 mins={}
